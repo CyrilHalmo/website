@@ -57,6 +57,10 @@ main > section {
     padding: 70px 0;
 }
 
+.flag img {
+	height: 1em;
+}
+
 .btn {
     border-radius: 0;
     border: 0;
@@ -727,7 +731,7 @@ ul.external li a:hover {
 
 
 #testimonials {
-    background-image: url(../img/parallax/testimonial.jpg);
+    background-image: url(../img/slider/codebg.jpg);
     padding: 0;
     color: #fff;
 }
@@ -897,7 +901,7 @@ ul.external li a:hover {
 ==================================================================*/
 
 #social {
-    background-image: url(../img/slider/banner.jpg);
+    background-image: url(../img/slider/codebg.jpeg);
     padding: 0;
 }
 
