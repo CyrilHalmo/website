@@ -19,7 +19,6 @@
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
 
-	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/jquery.fancybox.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/owl.carousel.css">
@@ -27,6 +26,7 @@
 	<link rel="stylesheet" href="css/animate.css">
 	<link rel="stylesheet" href="css/main.css">
 
+	<script src="https://kit.fontawesome.com/bebdf0d79e.js" crossorigin="anonymous"></script>
 	<script src="js/modernizr-2.6.2.min.js"></script>
 
 </head>
@@ -54,7 +54,7 @@
 				<ul id="nav" class="nav navbar-nav">
 					<li><a href="#body">Home</a></li>
 					<li><a href="#about" th:insert="fragments/__${language}__.html :: about"></a></li>
-					<li><a href="#portfolio">portfolio</a></li>
+					<li><a href="#technologies" th:insert="fragments/__${language}__.html :: technologies"></a></li>
 					<li><a href="#testimonials">Testimonial</a></li>
 					<li><a href="#price">price</a></li>
 					<li><a href="#contact">Contact</a></li>
@@ -111,65 +111,79 @@
 			</div>
 		</section>
 
-		<section id="service">
+		<section id="technologies">
 			<div class="container">
 				<div class="row">
 
 					<div class="sec-title text-center">
-						<h2 class="wow animated bounceInLeft">Service</h2>
-						<p class="wow animated bounceInRight">The Key Features of our
-							Job</p>
+						<h2 class="wow animated bounceInLeft" th:insert="fragments/__${language}__.html :: technologies"></h2>
+						<p class="wow animated bounceInRight" th:insert="fragments/__${language}__.html :: technologiesSub"></p>
 					</div>
 
 					<div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn">
-						<div class="service-item">
-							<div class="service-icon">
-								<i class="fa fa-home fa-3x"></i>
+						<div class="technologies-item">
+							<div class="technologies-icon">
+								<i class="fa fa-brands fa-java fa-3x"></i>
 							</div>
-							<h3>Support</h3>
-							<p>Lorem Ipsum is simply dummy text of the printing and
-								typesetting industry.</p>
+							<h3 th:insert="fragments/__${language}__.html :: java"></h3>
+							<p th:insert="fragments/__${language}__.html :: javaSub"></p>
 						</div>
 					</div>
 
 					<div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn" data-wow-delay="0.3s">
-						<div class="service-item">
-							<div class="service-icon">
-								<i class="fa fa-tasks fa-3x"></i>
+						<div class="technologies-item">
+							<div class="technologies-icon">
+								<i class="fa icon-springboot fa-3x"></i>
 							</div>
-							<h3>Well Documented</h3>
-							<p>Lorem Ipsum is simply dummy text of the printing and
-								typesetting industry.</p>
+							<h3 th:insert="fragments/__${language}__.html :: springBoot"></h3>
+							<p th:insert="fragments/__${language}__.html :: springBootSub"></p>
 						</div>
 					</div>
 
 					<div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn" data-wow-delay="0.6s">
-						<div class="service-item">
-							<div class="service-icon">
-								<i class="fa fa-clock-o fa-3x"></i>
+						<div class="technologies-item">
+							<div class="technologies-icon">
+								<i class="fa icon-thymeleaf fa-3x"></i>
 							</div>
-							<h3>Design UI/UX</h3>
-							<p>Lorem Ipsum is simply dummy text of the printing and
-								typesetting industry.</p>
+							<h3 th:insert="fragments/__${language}__.html :: thymeleaf"></h3>
+							<p th:insert="fragments/__${language}__.html :: thymeleafSub"></p>
 						</div>
 					</div>
 
 					<div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn" data-wow-delay="0.9s">
-						<div class="service-item">
-							<div class="service-icon">
-								<i class="fa fa-heart fa-3x"></i>
+						<div class="technologies-item">
+							<div class="technologies-icon">
+								<i class="fa fa-brands fa-square-js fa-3x"></i>
 							</div>
-
-							<h3>Web Security</h3>
-							<p>Lorem Ipsum is simply dummy text of the printing and
-								typesetting industry.</p>
+							<h3 th:insert="fragments/__${language}__.html :: javaScript"></h3>
+							<p th:insert="fragments/__${language}__.html :: javaScriptSub"></p>
+						</div>
+					</div>
+					
+					<div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn" data-wow-delay="0.9s">
+						<div class="technologies-item">
+							<div class="technologies-icon">
+								<i class="fa icon-jquery fa-3x"></i>
+							</div>
+							<h3 th:insert="fragments/__${language}__.html :: jQuery"></h3>
+							<p th:insert="fragments/__${language}__.html :: jQuerySub"></p>
+						</div>
+					</div>
+					
+					<div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn" data-wow-delay="0.9s">
+						<div class="technologies-item">
+							<div class="technologies-icon">
+								<i class="fa fa-brands fa-unity fa-3x"></i>
+							</div>
+							<h3 th:insert="fragments/__${language}__.html :: unity"></h3>
+							<p th:insert="fragments/__${language}__.html :: unitySub"></p>
 						</div>
 					</div>
 
 				</div>
 			</div>
 		</section>
-		<!-- end Service section -->
+		
 		<!-- portfolio section -->
 		<section id="portfolio">
 			<div class="container">
@@ -205,7 +219,7 @@
 									typesetting ndustry.</p>
 							</figcaption>
 							<ul class="external">
-								<li><a class="fancybox" title="Wall street" href="img/slider/codebg.jpeg"
+								<li><a class="fancybox" title="Wall street" href="img/slider/codebg.jpg"
 										data-fancybox-group="works"><i class="fa fa-search"></i></a></li>
 								<li><a href=""><i class="fa fa-link"></i></a></li>
 							</ul>

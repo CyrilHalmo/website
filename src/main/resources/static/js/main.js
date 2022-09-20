@@ -1,16 +1,31 @@
 function changeLanguage(language) {
-	replaceFragment("about", language, "about");
-	replaceFragment("flag", language, "flag");
+	replaceFragment("about", language);
+	replaceFragment("flag", language, true);
 	replaceFragment("subtitle", language);
-	return false;
+	replaceFragment("technologies", language);
+	replaceFragment("technologiesSub", language);
+	replaceFragment("java", language);
+	replaceFragment("javaSub", language);
+	replaceFragment("springBoot", language);
+	replaceFragment("springBootSub", language);
+	replaceFragment("thymeleaf", language);
+	replaceFragment("thymeleafSub", language);
+	replaceFragment("javaScript", language);
+	replaceFragment("javaScriptSub", language);
+	replaceFragment("jQuery", language);
+	replaceFragment("jQuerySub", language);
+	replaceFragment("unity", language);
+	replaceFragment("unitySub", language);
+	window.history.pushState("", "", "/" + language + $(location).attr('hash'));
 };
 
-function replaceFragment(className, language) {
-	window.history.pushState("", "", "/" + language)
-	$.get("getFragment/" + language + "/" + className).done(function(fragment) { $("." + className).replaceWith(fragment) });
+function replaceFragment(className, language, preventDefault = false) {
+	$.get("getFragment/" + language + "/" + className).done(function(fragment) {
+		$("." + className).replaceWith(fragment);
+		if (preventDefault)
+			$("." + className).click(function(event) { event.preventDefault(); });
+	});
 };
-
-
 
 
 /* ========================================================================= */
