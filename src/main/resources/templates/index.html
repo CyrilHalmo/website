@@ -55,6 +55,7 @@
 					<li><a href="#body">Home</a></li>
 					<li><a href="#about" th:insert="fragments/__${language}__.html :: about"></a></li>
 					<li><a href="#technologies" th:insert="fragments/__${language}__.html :: technologies"></a></li>
+					<li><a href="#projects" th:insert="fragments/__${language}__.html :: projects"></a></li>
 					<li><a href="#testimonials">Testimonial</a></li>
 					<li><a href="#price">price</a></li>
 					<li><a href="#contact">Contact</a></li>
@@ -80,7 +81,8 @@
 						<div class="slide-caption">
 							<div class="caption-content">
 								<h2 class="animated fadeInDown">Cyril Halmo</h2>
-								<span class="animated fadeInDown" th:insert="fragments/__${language}__.html :: subtitle"></span>
+								<span class="animated fadeInDown"
+									th:insert="fragments/__${language}__.html :: subtitle"></span>
 							</div>
 						</div>
 
@@ -116,8 +118,10 @@
 				<div class="row">
 
 					<div class="sec-title text-center">
-						<h2 class="wow animated bounceInLeft" th:insert="fragments/__${language}__.html :: technologies"></h2>
-						<p class="wow animated bounceInRight" th:insert="fragments/__${language}__.html :: technologiesSub"></p>
+						<h2 class="wow animated bounceInLeft"
+							th:insert="fragments/__${language}__.html :: technologies"></h2>
+						<p class="wow animated bounceInRight"
+							th:insert="fragments/__${language}__.html :: technologiesSub"></p>
 					</div>
 
 					<div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn">
@@ -125,7 +129,7 @@
 							<div class="technologies-icon">
 								<i class="fa fa-brands fa-java fa-3x"></i>
 							</div>
-							<h3 th:insert="fragments/__${language}__.html :: java"></h3>
+							<h3>Java</h3>
 							<p th:insert="fragments/__${language}__.html :: javaSub"></p>
 						</div>
 					</div>
@@ -135,7 +139,7 @@
 							<div class="technologies-icon">
 								<i class="fa icon-springboot fa-3x"></i>
 							</div>
-							<h3 th:insert="fragments/__${language}__.html :: springBoot"></h3>
+							<h3>Spring Boot</h3>
 							<p th:insert="fragments/__${language}__.html :: springBootSub"></p>
 						</div>
 					</div>
@@ -145,7 +149,7 @@
 							<div class="technologies-icon">
 								<i class="fa icon-thymeleaf fa-3x"></i>
 							</div>
-							<h3 th:insert="fragments/__${language}__.html :: thymeleaf"></h3>
+							<h3>Thymeleaf</h3>
 							<p th:insert="fragments/__${language}__.html :: thymeleafSub"></p>
 						</div>
 					</div>
@@ -155,61 +159,56 @@
 							<div class="technologies-icon">
 								<i class="fa fa-brands fa-square-js fa-3x"></i>
 							</div>
-							<h3 th:insert="fragments/__${language}__.html :: javaScript"></h3>
+							<h3>JavaScript</h3>
 							<p th:insert="fragments/__${language}__.html :: javaScriptSub"></p>
 						</div>
 					</div>
-					
+
 					<div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn" data-wow-delay="0.9s">
 						<div class="technologies-item">
 							<div class="technologies-icon">
 								<i class="fa icon-jquery fa-3x"></i>
 							</div>
-							<h3 th:insert="fragments/__${language}__.html :: jQuery"></h3>
+							<h3>jQuery</h3>
 							<p th:insert="fragments/__${language}__.html :: jQuerySub"></p>
 						</div>
 					</div>
-					
+
 					<div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn" data-wow-delay="0.9s">
 						<div class="technologies-item">
 							<div class="technologies-icon">
 								<i class="fa fa-brands fa-unity fa-3x"></i>
 							</div>
-							<h3 th:insert="fragments/__${language}__.html :: unity"></h3>
+							<h3>Unity</h3>
 							<p th:insert="fragments/__${language}__.html :: unitySub"></p>
+						</div>
+					</div>
+
+					<div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn" data-wow-delay="0.9s">
+						<div class="technologies-item">
+							<div class="technologies-icon">
+								<i class="fa icon-csharp fa-3x"></i>
+							</div>
+							<h3>C#</h3>
+							<p th:insert="fragments/__${language}__.html :: cSharpSub"></p>
 						</div>
 					</div>
 
 				</div>
 			</div>
 		</section>
-		
-		<!-- portfolio section -->
-		<section id="portfolio">
+
+		<section id="projects">
 			<div class="container">
 				<div class="row">
 
 					<div class="sec-title text-center wow animated fadeInDown">
-						<h2>FEATURED PROJECTS</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-							do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+						<h2 th:insert="fragments/__${language}__.html :: projects"></h2>
+						<p th:insert="fragments/__${language}__.html :: projectsSub"></p>
 					</div>
 
-
 					<ul class="project-wrapper wow animated fadeInUp">
-						<li class="portfolio-item"><img src="img/portfolio/item.jpg" class="img-responsive"
-								alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat">
-							<figcaption class="mask">
-								<h3>Wall street</h3>
-								<p>Lorem Ipsum is simply dummy text of the printing and
-									typesetting ndustry.</p>
-							</figcaption>
-							<ul class="external">
-								<li><a class="fancybox" title="Araund The world" data-fancybox-group="works"
-										href="img/portfolio/item.jpg"><i class="fa fa-search"></i></a></li>
-								<li><a href=""><i class="fa fa-link"></i></a></li>
-							</ul>
-						</li>
+						<li th:replace="fragments/brickBreaker.html :: placeholder"></li>
 
 						<li class="portfolio-item"><img src="img/portfolio/item2.jpg" class="img-responsive"
 								alt="Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. ">

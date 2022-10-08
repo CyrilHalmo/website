@@ -4,19 +4,25 @@ function changeLanguage(language) {
 	replaceFragment("subtitle", language);
 	replaceFragment("technologies", language);
 	replaceFragment("technologiesSub", language);
-	replaceFragment("java", language);
 	replaceFragment("javaSub", language);
-	replaceFragment("springBoot", language);
 	replaceFragment("springBootSub", language);
-	replaceFragment("thymeleaf", language);
 	replaceFragment("thymeleafSub", language);
-	replaceFragment("javaScript", language);
 	replaceFragment("javaScriptSub", language);
-	replaceFragment("jQuery", language);
 	replaceFragment("jQuerySub", language);
-	replaceFragment("unity", language);
 	replaceFragment("unitySub", language);
+	replaceFragment("cSharpSub", language);
+	replaceFragment("projects", language);
+	replaceFragment("projectsSub", language);
+	replaceFragment("brickBreakerSub", language);
 	window.history.pushState("", "", "/" + language + $(location).attr('hash'));
+};
+
+function openBrickBreaker() {
+	$.get("openBrickBreaker").done(function(fragment) { $(".brickBreaker").replaceWith(fragment) });
+};
+
+function closeBrickBreaker() {
+	$.get(window.location.pathname + "/closeBrickBreaker").done(function(fragment) { $(".brickBreaker").replaceWith(fragment) });
 };
 
 function replaceFragment(className, language, preventDefault = false) {
