@@ -6,7 +6,12 @@ function changeLanguage(language) {
 	replaceFragment("technologiesSub", language);
 	replaceFragment("javaSub", language);
 	replaceFragment("springBootSub", language);
+	replaceFragment("mavenSub", language);
 	replaceFragment("thymeleafSub", language);
+	replaceFragment("htmlSub", language);
+	replaceFragment("cssSub", language);
+	replaceFragment("bootstrapSub", language);
+	replaceFragment("fontawesomeSub", language);
 	replaceFragment("javaScriptSub", language);
 	replaceFragment("jQuerySub", language);
 	replaceFragment("unitySub", language);

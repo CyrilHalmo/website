@@ -283,7 +283,7 @@ main > section {
          -o-transition: all 0.8s ease 0s;
             transition: all 0.8s ease 0s;
 
-    background-color: rgba(0,0,0,.4);
+    background-color: rgba(0,0,0,.6);
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
     padding: 5px 0;
 }
@@ -593,6 +593,8 @@ h1.navbar-brand {
     height: 85px;
     width: 85px;
     line-height: 101px;
+    margin: 20px;
+    margin-bottom: 10px;
 
     -webkit-transform: rotate(47deg);
        -moz-transform: rotate(47deg);
@@ -658,6 +660,11 @@ h1.navbar-brand {
 .icon-csharp:before {
 	font-family: 'icomoon' !important;
 	content: "\e903";
+}
+
+.icon-maven:before {
+	font-family: 'icomoon' !important;
+	content: "\e904";
 }
 
 /*=================================================================
