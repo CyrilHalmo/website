@@ -4,6 +4,7 @@ import java.util.Locale;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.stereotype.Controller;
@@ -23,6 +24,11 @@ public class RESTController extends SpringBootServletInitializer {
 		return "redirect:/en";
 	}
 
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+		return builder.sources(RESTController.class);
+	}
+
 	@RequestMapping("/de")
 	String homeDE(Model model) {
 		model.addAttribute("language", Locale.GERMAN);
@@ -34,17 +40,17 @@ public class RESTController extends SpringBootServletInitializer {
 		model.addAttribute("language", Locale.ENGLISH);
 		return "index";
 	}
-	
+
 	@GetMapping("getFragment/{language}/{fragmentName}")
 	String getFragment(@PathVariable("language") String language, @PathVariable("fragmentName") String fragmentName) {
 		return "fragments/" + language + ".html :: " + fragmentName;
 	}
-	
+
 	@GetMapping("openBrickBreaker")
 	String getBrickBreakerGame() {
 		return "fragments/brickBreaker.html :: game";
 	}
-	
+
 	@GetMapping("{language}/closeBrickBreaker")
 	String getBrickBreakerPlaceholder(Model model, @PathVariable("language") String language) {
 		model.addAttribute("language", language);
