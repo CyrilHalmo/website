@@ -1,5 +1,6 @@
 function changeLanguage(language) {
 	replaceFragment("about", language);
+	replaceFragment("aboutSub", language);
 	replaceFragment("flag", language, true);
 	replaceFragment("subtitle", language);
 	replaceFragment("technologies", language);
